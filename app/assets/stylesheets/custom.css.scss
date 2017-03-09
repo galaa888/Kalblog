@@ -1,0 +1,41 @@
+@import "bootstrap";
+
+#logo {
+  font-size: 1.7em;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #f4f4f4;
+}
+
+.center {
+  text-align: center;
+}
+.jumbotron {
+  background-image: asset-url('home.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 350px;
+}
+.jumbotron h1, .jumbotron p{
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 3px 3px 3px gray;
+}
+.btn-xlarge {
+  margin-top: 50px;
+  font-size: 1.7em;
+  box-shadow: 3px 3px 3px grey;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 12px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  background-color: #f5f5f5;
+}
