@@ -40,6 +40,37 @@ body {
   font-weight: bold;
 }
 
+.article-actions {
+  border-top: 1px solid #9f9f9f;
+  padding-top: 10px;
+}
+.card {
+  box-shadow: 0 0.5rem 1.0rem rgba(0,0,0,.2);
+  /* border: none; */
+}
+
+.article-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.article-title-list {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.article-body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.58;
+  letter-spacing: -.003em;
+}
+
 .footer {
   text-align: center;
   padding-top: 12px;
