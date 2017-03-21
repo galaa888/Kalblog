@@ -1,5 +1,11 @@
 @import "bootstrap";
-
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+}
 #logo {
   font-size: 1.7em;
   font-weight: bold;
@@ -21,12 +27,17 @@
 .jumbotron h1, .jumbotron p{
   color: #fff;
   font-weight: bold;
-  text-shadow: 3px 3px 3px gray;
+  text-shadow: 0 0 3px #000000;
 }
 .btn-xlarge {
+  text-shadow: 2px 1px 2px gray;
   margin-top: 50px;
   font-size: 1.7em;
-  box-shadow: 3px 3px 3px grey;
+  box-shadow: 0 0 5px 2px #ffffff;
+}
+
+.form-control-label {
+  font-weight: bold;
 }
 
 .footer {
@@ -35,7 +46,6 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
   height: 50px;
   background-color: #f5f5f5;
 }
