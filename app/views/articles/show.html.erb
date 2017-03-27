@@ -1,4 +1,26 @@
 <div class="card col-md-6 offset-md-3">
+  <div class="card-header article-meta-details" style="background: white;">
+    <small class="row">
+      <div class="float-left">
+        <%= link_to gravatar_for(@article.user), user_path(@article.user)%>
+      </div>
+      <div class="float-left ml-3 align-middle">
+        <ul class="listing">
+          <li class="lead">
+            <%= link_to @article.user.username, user_path(@article.user), class: "text-primary" %>
+          </li>
+          <li class="text-muted">
+            <%= time_ago_in_words(@article.updated_at) %>
+          </li>
+        </ul>
+      </div>
+    </small>
+
+
+  </div>
+
+
+
   <div class="card-block">
     <h2 class="card-title center article-title"><%= @article.title %></h2>
 
