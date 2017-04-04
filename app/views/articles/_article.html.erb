@@ -17,13 +17,19 @@
             <%= truncate(article.description, length: 100) %>
 
           </div>
-          <div class="article-actions float-right">
-            <%= link_to "Edit", edit_article_path(article), class: "btn btn-sm btn-outline-primary" %>
-            <%= link_to "Delete", article_path(article), method: :delete,
-                                  data: { confirm: "Are you sure to delete?"},
-                                  class: "btn btn-sm btn-outline-danger" %>
 
-          </div>
+          <% if logged_in? && current_user == article.user %>
+
+            <div class="article-actions float-right">
+              <%= link_to "Edit", edit_article_path(article), class: "btn btn-sm btn-outline-primary" %>
+              <%= link_to "Delete", article_path(article), method: :delete,
+                                    data: { confirm: "Are you sure to delete?"},
+                                    class: "btn btn-sm btn-outline-danger" %>
+
+            </div>
+            
+          <% end %>
+
         </div>
       </div>
     <!--  <hr> -->
