@@ -18,7 +18,7 @@
 
           </div>
 
-          <% if logged_in? && current_user == article.user %>
+          <% if logged_in? && (current_user == article.user || current_user.admin?) %>
 
             <div class="article-actions float-right">
               <%= link_to "Edit", edit_article_path(article), class: "btn btn-sm btn-outline-primary" %>
@@ -27,7 +27,7 @@
                                     class: "btn btn-sm btn-outline-danger" %>
 
             </div>
-            
+
           <% end %>
 
         </div>

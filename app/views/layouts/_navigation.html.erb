@@ -24,8 +24,10 @@
         <%= link_to "New Post", new_article_path, class: "nav-link mr-3 text-white" %>
       </li>
       <li class="nav-item dropdown mr-5">
-        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <!-- User Profile -->
           <span class="fa fa-user-circle fa-fw text-white" aria-hidden="true"></span>
+            <%= "Admin" if current_user.admin? %>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <%= link_to "Edit Profile", edit_user_path(current_user), class: "dropdown-item" %>
