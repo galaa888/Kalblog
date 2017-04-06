@@ -36,15 +36,15 @@
         </div>
       </li>
       <li class="nav-item">
-        <%= link_to 'Log out', logout_path, method: :delete, class: 'btn btn-outline-success' %>
+        <%= link_to 'Log out', logout_path, method: :delete, class: 'btn btn-outline-info' %>
       </li>
 
     <% else %>
       <li class="nav-item">
-        <%= link_to 'Log in', login_path, class: 'btn btn-outline-success' %>
+        <%= link_to 'Log in', login_path, class: 'btn btn-outline-info' %>
       </li>
       <li class="nav-item">
-        <%= link_to 'Sign up', signup_path, class: 'btn btn-outline-success' %>
+        <%= link_to 'Sign up', signup_path, class: 'btn btn-outline-info' %>
       </li>
     </ul>
     <% end %>
