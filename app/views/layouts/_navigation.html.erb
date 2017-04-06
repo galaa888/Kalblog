@@ -1,10 +1,9 @@
-<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-  <div class="container">
+<nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse fixed-top">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <%= link_to "<span id='kal'>Kal</span>Blog".html_safe, root_path, class: "navbar-brand", id: "logo" %>
+  <%= link_to "<span id='kal'>Kal</span>Blog".html_safe, root_path, class: "navbar-brand ml-5", id: "logo" %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -13,6 +12,22 @@
       </li>
       <li class="nav-item">
         <%= link_to "Bloggers", users_path, class: "nav-link" %>
+      </li>
+
+      <li class="nav-item dropdown mr-5">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <!-- User Profile -->
+          <span>Categories</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <% Category.all.each do |category| %>
+            <%= link_to "#{category.name}", category_path(category), class: "dropdown-item" %>
+          <% end %>
+          <div class="dropdown-divider"></div>
+          <% if logged_in? and current_user.admin? %>
+            <%= link_to "New Category", new_category_path, class: "dropdown-item" %>
+          <% end %>
+        </div>
       </li>
 
     </ul>
@@ -32,7 +47,6 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <%= link_to "Edit Profile", edit_user_path(current_user), class: "dropdown-item" %>
           <%= link_to "View Profile", user_path(current_user), class: "dropdown-item" %>
-          <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
       <li class="nav-item">
@@ -50,5 +64,4 @@
     <% end %>
 
   </div>
-</div>
 </nav>
