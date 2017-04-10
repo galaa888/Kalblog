@@ -1,0 +1,13 @@
+<p class="text-center category-label mt-3">Category: </p>
+<h1 align="center"><%= @category.name %></h1>
+
+  <% if logged_in? && current_user.admin? %>
+
+      <%= link_to 'Edit', edit_category_path(@category), class: "badge category-badge mb-3", style: "margin-left: 45%; width:10%;" %>
+
+  <% end %>
+
+<%= render 'articles/article', obj: @category_articles %>
+
+
+<%= will_paginate @category_articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>

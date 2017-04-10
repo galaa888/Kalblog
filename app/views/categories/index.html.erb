@@ -12,7 +12,12 @@
             <div class="article-title-list">
               <%= link_to category.name, category_path(category), class: "lead" %>
             </div>
+            <hr>
+            <div class="text-muted articles-count">
+              <%= pluralize(category.articles.count, "article") if category.articles %>
+            </div>
           </div>
+
         </div>
     </div>
   </ul>

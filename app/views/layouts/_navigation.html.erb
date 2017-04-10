@@ -20,11 +20,16 @@
           <span>Categories</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <% if logged_in? && current_user.admin? %>
+            <%= link_to "All categories", categories_path, class: "dropdown-item" %>
+            <div class="dropdown-divider"></div>
+          <% end %>
           <% Category.all.each do |category| %>
             <%= link_to "#{category.name}", category_path(category), class: "dropdown-item" %>
           <% end %>
-          <div class="dropdown-divider"></div>
+
           <% if logged_in? and current_user.admin? %>
+            <div class="dropdown-divider"></div>
             <%= link_to "New Category", new_category_path, class: "dropdown-item" %>
           <% end %>
         </div>

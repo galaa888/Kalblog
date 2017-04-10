@@ -14,6 +14,15 @@
           <%= f.text_area :description, rows: 10, id: "articleDescription", class: "form-control article-body", placeholder: "Your story..." %>
         </div>
       </div>
+
+      <div class="form-group row">
+        <div class="offset-sm-2 col-sm-8">
+          <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb|  %>
+            <% cb.label(class: "form-check form-check-inline form-check-label") {cb.check_box(class: "checkbox") + " "+cb.text} %>
+          <% end %>
+        </div>
+      </div>
+
       <div class="form-group row">
         <div class="offset-sm-2 col-sm-10">
           <%= f.submit class: 'btn btn-outline-primary btn-lg' %>
