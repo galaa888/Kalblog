@@ -19,6 +19,7 @@ h1{
 #kal {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+  color: white !important;
 }
 #logo {
   font-size: 2em;
@@ -31,7 +32,20 @@ h1{
 .navbar-nav, .navbar-collapse {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+
 }
+.navbar-nav a {
+  color: white !important;
+}
+
+.navbar-nav a:hover {
+  color: #0275d8 !important;
+}
+
+.navbar-nav .dropdown-item{
+  color: black !important;
+}
+
 .fa-user-circle {
   font-size: 150%;
 }
@@ -43,7 +57,7 @@ h1{
   background-image: asset-url('home.jpg');
   background-size: cover;
   background-attachment: fixed;
-  min-height: 350px;
+  min-height: 600px;
 }
 .jumbotron h1, .jumbotron p{
   color: #fff;
@@ -54,7 +68,6 @@ h1{
   text-shadow: 2px 1px 2px gray;
   margin-top: 50px;
   font-size: 1.7em;
-  box-shadow: 0 0 5px 2px #ffffff;
 }
 
 .form-control-label {
@@ -70,6 +83,9 @@ h1{
   /* border: none; */
 }
 
+.btn {
+  border-radius:0;
+}
 .article-meta-details {
   font-weight: lighter;
 }
@@ -138,6 +154,7 @@ h1{
 .input-checkbox input {
   width: auto !important;
 }
+
 
 .footer {
   text-align: center;

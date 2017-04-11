@@ -38,6 +38,14 @@ class CategoriesController < ApplicationController
     @category_articles = @category.articles.order("created_at DESC").paginate(page: params[:page], per_page: 5)
   end
 
+  def destroy
+    @category = Category.find(params[:id])
+    flash[:danger] = "#{@category.name} removed from all articles"
+    @category.destroy
+    redirect_to categories_path
+  end
+
+
   private
   def category_params
     params.require(:category).permit(:name)
